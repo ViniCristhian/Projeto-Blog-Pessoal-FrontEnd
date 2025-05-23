@@ -4,10 +4,12 @@ import Navbar from "./components/navbar/Navbar.tsx";
 import Home from "./pages/home/Home.tsx";
 import Cadastro from "./pages/cadastro/Cadastro.tsx";
 import Login from "./pages/login/Login.tsx";
+import { AuthProvider } from "./contexts/AuthContext.tsx";
 
 function App() {
   return (
     <>
+    <AuthProvider>
       <BrowserRouter>
 
         <Navbar />
@@ -24,6 +26,7 @@ function App() {
         <Footer />
 
       </BrowserRouter>
+      </AuthProvider>
     </>
   )
 }
