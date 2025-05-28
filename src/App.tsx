@@ -8,31 +8,38 @@ import { AuthProvider } from "./contexts/AuthContext.tsx";
 import ListaTemas from "./components/temas/listatemas/ListaTemas.tsx";
 import FormTema from "./components/temas/formtema/FormTema.tsx";
 import DeletarTema from "./components/temas/deletartema/DeletarTema.tsx";
+import ListaPostagens from "./components/postagens/listapostagens/ListaPostagens.tsx";
+import FormPostagem from "./components/postagens/formpostagem/FormPostagem.tsx";
+import DeletarPostagem from "./components/postagens/deletarpostagem/DeletarPostagem.tsx";
 
 function App() {
   return (
     <>
-    <AuthProvider>
-      <BrowserRouter>
+      <AuthProvider>
+        <BrowserRouter>
 
-        <Navbar />
+          <Navbar />
 
-        <div className="min-h-[80vh]">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/cadastro" element={<Cadastro />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/temas" element={<ListaTemas />} />
-            <Route path="/cadastrartema" element={<FormTema/>} />
-            <Route path="/editartema/:id" element={<FormTema/>}/>
-            <Route path="/deletartema/:id" element={<DeletarTema />} />
-          </Routes>
-        </div>
+          <div className="min-h-[80vh]">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/home" element={<Home />} />
+              <Route path="/cadastro" element={<Cadastro />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/temas" element={<ListaTemas />} />
+              <Route path="/cadastrartema" element={<FormTema />} />
+              <Route path="/editartema/:id" element={<FormTema />} />
+              <Route path="/deletartema/:id" element={<DeletarTema />} />
+              <Route path="/postagens" element={<ListaPostagens />} />
+              <Route path="/cadastrarpostagem" element={<FormPostagem />} />
+              <Route path="/editarpostagem/:id" element={<FormPostagem />} />
+              <Route path="/deletarpostagem/:id" element={<DeletarPostagem />} />
+            </Routes>
+          </div>
 
-        <Footer />
+          <Footer />
 
-      </BrowserRouter>
+        </BrowserRouter>
       </AuthProvider>
     </>
   )
